@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 gem 'devise'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'responders'
