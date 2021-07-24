@@ -5,8 +5,6 @@
   <% end %>
 </div>
 
-<p id="notice"><%= notice %></p>
-
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
@@ -22,7 +20,7 @@
           <td><%= link_to servico.nome, servico %></td>
           <td>
             <%= link_to(fa_icon('edit', text: 'editar'), edit_servico_path(servico)) %>
-            <%= link_to(fa_icon('trash', text: 'remover'), servico, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger') %>
+            <%= link_to(fa_icon('trash', text: 'remover'), servico, method: :delete, data: { confirm_swal: 'Você tem certeza?' }, class: 'text-danger') %>
           </td>
         </tr>
       <% end %>

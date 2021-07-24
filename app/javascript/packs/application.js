@@ -9,6 +9,9 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 import "bootstrap_includes"
+import "sweetalert2_includes.js"
+
+global.sweetalert = require("sweetalert2")
 
 Rails.start()
 Turbolinks.start()
