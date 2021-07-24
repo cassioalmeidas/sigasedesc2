@@ -22,6 +22,7 @@ class ServicosController < ApplicationController
   # POST /servicos or /servicos.json
   def create
     @servico = Servico.new(servico_params)
+    @servico.save
     respond_with @servico, location: -> { servicos_url }
   end
 
