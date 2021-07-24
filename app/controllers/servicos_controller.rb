@@ -22,38 +22,19 @@ class ServicosController < ApplicationController
   # POST /servicos or /servicos.json
   def create
     @servico = Servico.new(servico_params)
-
-    respond_to do |format|
-      if @servico.save
-        format.html { redirect_to servicos_url, notice: "Servico was successfully created." }
-        format.json { render :show, status: :created, location: @servico }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @servico.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with @servico, location: -> { servicos_url }
   end
 
   # PATCH/PUT /servicos/1 or /servicos/1.json
   def update
-    respond_to do |format|
-      if @servico.update(servico_params)
-        format.html { redirect_to servicos_url, notice: "Serviço atualizado com sucesso." }
-        format.json { render :show, status: :ok, location: @servico }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @servico.errors, status: :unprocessable_entity }
-      end
-    end
+    @servico.update(servico_params)
+    respond_with @servico, location: -> { servicos_url }
   end
 
   # DELETE /servicos/1 or /servicos/1.json
   def destroy
     @servico.destroy
-    respond_to do |format|
-      format.html { redirect_to servicos_url, notice: "Servico was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    respond_with @servico
   end
 
   private
