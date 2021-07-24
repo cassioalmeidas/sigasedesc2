@@ -18,5 +18,9 @@ module Sigasedesc
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.generators do |g|
+      g.scaffold_stylesheet false
+      g.stylesheets false
+    end
   end
 end

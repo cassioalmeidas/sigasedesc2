@@ -26,7 +26,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 gem 'devise'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'simple_form'
+gem 'rails-i18n', '~> 6.0.0'
 
 
 # Reduces boot times through caching; required in config/boot.rb

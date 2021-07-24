@@ -1,0 +1,7 @@
+<h2><%= @servico.nome %></h2>
+<p>
+  <%= @servico.descricao %>
+</p>
+
+<%= link_to 'Editar', edit_servico_path(@servico) %> |
+<%= link_to 'Voltar', servicos_path %>
