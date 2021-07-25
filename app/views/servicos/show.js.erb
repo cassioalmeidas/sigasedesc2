@@ -1,0 +1,15 @@
+var modalContent = $('#modal-window').html(
+`
+  <%= j render 'shared/modal', 
+        title: 'Detalhes do serviço', 
+        body: @servico.detalhes,
+        footer: @servico.decorate.modal_links
+  %>
+`
+)
+
+var modal = new bootstrap.Modal(modalContent, {
+  keyboard: false
+})
+
+modal.show()

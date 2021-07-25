@@ -17,7 +17,7 @@
     <tbody>
       <% @servicos.each do |servico| %>
         <tr>
-          <td><%= link_to servico.nome, servico %></td>
+          <td><%= link_to servico.nome, servico, remote: true  %></td>
           <td>
             <%= icon 'fas', 'edit'  %>
             <%= link_to 'editar', edit_servico_path(servico) %>
@@ -29,5 +29,3 @@
     </tbody>
   </table>
 </div>
-
-

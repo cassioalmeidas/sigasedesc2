@@ -7,4 +7,12 @@ module ApplicationHelper
       end
     end
   end
+
+
+  def modal_for(id, &block)
+    render(
+      partial: 'shared/modal',
+      locals: { id: id, block: block }
+    )
+  end
 end

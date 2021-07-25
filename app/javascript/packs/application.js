@@ -13,8 +13,7 @@ import "sweetalert2_includes"
 import "register-service-work"
 
 global.sweetalert = require("sweetalert2")
-
-
+global.bootstrap = require("bootstrap")
 
 Rails.start()
 Turbolinks.start()

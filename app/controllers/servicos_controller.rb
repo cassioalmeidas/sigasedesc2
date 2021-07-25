@@ -1,5 +1,6 @@
 class ServicosController < ApplicationController
   before_action :set_servico, only: %i[ show edit update destroy ]
+  respond_to :js, only: :show
 
   # GET /servicos or /servicos.json
   def index
@@ -8,6 +9,7 @@ class ServicosController < ApplicationController
 
   # GET /servicos/1 or /servicos/1.json
   def show
+
   end
 
   # GET /servicos/new
