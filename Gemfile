@@ -29,9 +29,9 @@ gem 'devise'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
 gem 'rails-i18n', '~> 6.0.0'
+gem 'devise-i18n'
 gem 'responders'
 gem 'draper'
-
 
 
 
