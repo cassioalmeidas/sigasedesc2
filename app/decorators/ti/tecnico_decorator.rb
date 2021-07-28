@@ -1,5 +1,4 @@
-class ServicoDecorator < Draper::Decorator
-  include Draper::LazyHelpers
+class Ti::TecnicoDecorator < ApplicationDecorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through
@@ -10,12 +9,5 @@ class ServicoDecorator < Draper::Decorator
   #       object.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
-
-
-  def modal_links
-    links = []
-    links << link_to('Editar', edit_servico_path(object), class: 'btn btn-primary')
-    safe_join(links, '')
-  end
 
 end

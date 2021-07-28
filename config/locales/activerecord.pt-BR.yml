@@ -1,7 +1,7 @@
 pt-BR:
   activerecord:
     models:
-      servico:
+      ti/servico:
         one: Serviço
         other: Serviços
     attributes: 

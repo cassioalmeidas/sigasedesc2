@@ -1,7 +1,7 @@
-<%= simple_form_for(servico) do |f| %>
+<%= simple_form_for(ti_servico) do |f| %>
   <%= f.error_notification %>
   <%= f.input :nome, wrapper_html: { class: 'mb-3' } %>
   <%= f.input :descricao, wrapper_html: { class: 'mb-3' } %>
   <%= f.button :submit, class: 'btn btn-primary' %>
-  <%= link_to 'Cancelar e voltar', servicos_path, class: 'btn btn-secondary' %>
+  <%= link_to 'Cancelar e voltar', ti_servicos_path, class: 'btn btn-secondary' %>
 <% end %>

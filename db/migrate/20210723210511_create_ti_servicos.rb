@@ -1,6 +1,6 @@
-class CreateServicos < ActiveRecord::Migration[6.1]
+class CreateTiServicos < ActiveRecord::Migration[6.1]
   def change
-    create_table :servicos do |t|
+    create_table :ti_servicos do |t|
       t.string :nome, null: false
       t.text :descricao
 

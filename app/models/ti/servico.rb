@@ -1,4 +1,4 @@
-class Servico < ApplicationRecord
+class Ti::Servico < ApplicationRecord
   validates :nome, presence: true
 
   def detalhes

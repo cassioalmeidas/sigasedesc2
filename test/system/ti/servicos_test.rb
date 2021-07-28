@@ -1,21 +1,21 @@
 require "application_system_test_case"
 
-class ServicosTest < ApplicationSystemTestCase
+class Ti::ServicosTest < ApplicationSystemTestCase
   setup do
-    @servico = servicos(:one)
+    @ti_servico = ti_servicos(:one)
   end
 
   test "visiting the index" do
-    visit servicos_url
-    assert_selector "h1", text: "Servicos"
+    visit ti_servicos_url
+    assert_selector "h1", text: "Ti/Servicos"
   end
 
   test "creating a Servico" do
-    visit servicos_url
-    click_on "New Servico"
+    visit ti_servicos_url
+    click_on "New Ti/Servico"
 
-    fill_in "Descricao", with: @servico.descricao
-    fill_in "Nome", with: @servico.nome
+    fill_in "Descricao", with: @ti_servico.descricao
+    fill_in "Nome", with: @ti_servico.nome
     click_on "Create Servico"
 
     assert_text "Servico was successfully created"
@@ -23,11 +23,11 @@ class ServicosTest < ApplicationSystemTestCase
   end
 
   test "updating a Servico" do
-    visit servicos_url
+    visit ti_servicos_url
     click_on "Edit", match: :first
 
-    fill_in "Descricao", with: @servico.descricao
-    fill_in "Nome", with: @servico.nome
+    fill_in "Descricao", with: @ti_servico.descricao
+    fill_in "Nome", with: @ti_servico.nome
     click_on "Update Servico"
 
     assert_text "Servico was successfully updated"
@@ -35,11 +35,11 @@ class ServicosTest < ApplicationSystemTestCase
   end
 
   test "destroying a Servico" do
-    visit servicos_url
+    visit ti_servicos_url
     page.accept_confirm do
       click_on "Destroy", match: :first
     end
 
-    assert_text "Servico was successfully destroyed"
+    assert_text "ti_ was successfully destroyed"
   end
 end
