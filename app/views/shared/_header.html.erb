@@ -20,7 +20,7 @@
           <li>
               <hr class="dropdown-divider" />
           </li>
-          <li><a class="dropdown-item" href="#!">Logout</a></li>
+          <%= link_to "Sair", destroy_usuario_session_path, method: :delete, class: 'dropdown-item'  %>
         </ul>
       </li>
     </ul>

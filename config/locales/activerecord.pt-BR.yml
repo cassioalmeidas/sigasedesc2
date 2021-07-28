@@ -1,5 +1,7 @@
 pt-BR:
   activerecord:
+    models:
+      servico: Serviço
     attributes: 
       servico:
         descricao: Descrição
