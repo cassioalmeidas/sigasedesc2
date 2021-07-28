@@ -9,7 +9,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body class="bg-primary">
+  <body class="bg-info">
+    <%= render 'shared/flash' %>
     <div id="layoutAuthentication">
       <div id="layoutAuthentication_content">
         <main>
@@ -26,7 +27,7 @@
         <footer class="py-4 bg-light mt-auto">
           <div class="container-fluid px-4">
             <div class="d-flex align-items-center justify-content-between small">
-              <div class="text-muted">Copyright &copy; SigaSedesc 2021</div>
+              <div class="text-muted">Todos os direitos reservados &copy; SigaSedesc 2021</div>
               <div>
                 <a href="#">Política de privacidade</a>
                 &middot;
