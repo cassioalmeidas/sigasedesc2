@@ -1,14 +1,22 @@
 <% unless flash.empty? %>
-   <script type="text/javascript">
-    <% flash.each do |f| %>
-      <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-        sweetalert.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: '<%= f[1] %>',
-          showConfirmButton: false,
-          timer: 1500
-        });
-    <% end %>
-   </script>
+  <% flash.each do |f| %>
+    <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+    <div  class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="flashToast" class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1500">
+        <div class="d-flex">
+          <div class="toast-body">
+            <%= f[1] %>
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).on('turbolinks:load', function () {
+        var toast = document.getElementById('flashToast');
+        var bsToast = new bootstrap.Toast(toast);
+        bsToast.show();    
+      });
+    </script>
+  <% end %>
 <% end %>

@@ -12,11 +12,11 @@ import "bootstrap_includes"
 import "sweetalert2_includes"
 import "register-service-work"
 
+
 global.sweetalert = require("sweetalert2")
 global.bootstrap = require("bootstrap")
 
-window.addEventListener('DOMContentLoaded', event => {
-
+$(document).on('turbolinks:load', function(){
   // Toggle the side navigation
   const sidebarToggle = document.body.querySelector('#sidebarToggle');
   if (sidebarToggle) {
@@ -31,6 +31,8 @@ window.addEventListener('DOMContentLoaded', event => {
       });
   }
 });
+
+
 
 
 Rails.start()
