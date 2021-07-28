@@ -1,0 +1,64 @@
+<div class="card shadow-lg border-0 rounded-lg mt-5">
+  <div class="card-header">
+    <h3 class="text-center font-weight-light my-4">Criar conta</h3>
+  </div>
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div class="form-floating mb-3 mb-md-0">
+            <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" />
+            <label for="inputFirstName">Primeiro nome</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating">
+            <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" />
+            <label for="inputLastName">Ultimo nome</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <%= f.email_field :email, 
+                      autofocus: true, 
+                      autocomplete: "email",
+                      class: 'form-control',
+                      placeholder: "nome@exemplo.com" %>
+        <%= f.label :email %>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div class="form-floating mb-3 mb-md-0">
+            <%= f.password_field :password,
+                            autocomplete: "new-password",
+                            class: 'form-control',
+                            placeholder: 'Senha' %>
+            <%= f.label :password, "Senha" %>
+            <% if @minimum_password_length %>
+              <em class="text-muted">mínimo de <%= @minimum_password_length %> caracteres</em>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating mb-3 mb-md-0">
+            <%= f.password_field :password_confirmation,
+                            autocomplete: "new-password",
+                            class: 'form-control',
+                            placeholder: 'Confirmação da senha' %>
+            <%= f.label :password_confirmation, "Confirmação da senha" %>
+          </div>
+        </div>
+        <div class="mt-4 mb-0">
+          <div class="d-grid"><%= f.submit "Criar conta", class: "btn btn-primary btn-block" %></div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="card-footer text-center py-3">
+      <div class="small">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+</div>
+
