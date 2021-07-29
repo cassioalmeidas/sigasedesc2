@@ -4,6 +4,9 @@ pt-BR:
       ti/servico:
         one: Serviço
         other: Serviços
+      ti/tecnico:
+        one: Técnico
+        other: Técnicos
     attributes: 
       servico:
         descricao: Descrição

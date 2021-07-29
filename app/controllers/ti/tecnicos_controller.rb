@@ -1,6 +1,6 @@
 class Ti::TecnicosController < ApplicationController
   before_action :set_ti_tecnico, only: [:show, :edit, :update, :destroy]
-
+  respond_to :js, only: :show
   respond_to :html
 
   def index

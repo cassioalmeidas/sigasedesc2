@@ -1,27 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="border-bottom mb-4 d-flex justify-content-between align-items-center">
+  <h1>Técnicos</h1>
+  <%= link_to new_ti_tecnico_path, class: 'btn btn-success' do %>
+    <%= icon 'fas', 'plus-square'  %> Cadastrar técnico
+  <% end %>
+</div>
 
-<h1>Ti Tecnicos</h1>
-
-<table>
+<div class="table-responsive">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Nome</th>
-      <th colspan="3"></th>
+      <th colspan="3">Ações</th>
     </tr>
   </thead>
 
   <tbody>
     <% @ti_tecnicos.each do |ti_tecnico| %>
       <tr>
-        <td><%= ti_tecnico.nome %></td>
-        <td><%= link_to 'Show', ti_tecnico %></td>
-        <td><%= link_to 'Edit', edit_ti_tecnico_path(ti_tecnico) %></td>
-        <td><%= link_to 'Destroy', ti_tecnico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to ti_tecnico.nome, ti_tecnico, remote: true %></td>
+        <td>
+          <%= icon 'fas', 'edit'  %>
+          <%= link_to 'editar', edit_ti_tecnico_path(ti_tecnico) %>
+          <%= icon 'fas', 'trash'  %> 
+          <%= link_to 'remover', ti_tecnico, method: :delete, data: { confirm_swal: 'Você tem certeza ?' }, class: "text-danger" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Ti Tecnico', new_ti_tecnico_path %>
+</div>

@@ -12,11 +12,9 @@
       </div>
     </div>
     <script>
-      $(document).on('turbolinks:load', function () {
-        var toast = document.getElementById('flashToast');
-        var bsToast = new bootstrap.Toast(toast);
-        bsToast.show();    
-      });
+      var toast = document.getElementById('flashToast');
+      var bsToast = new bootstrap.Toast(toast);
+      bsToast.show();    
     </script>
   <% end %>
 <% end %>

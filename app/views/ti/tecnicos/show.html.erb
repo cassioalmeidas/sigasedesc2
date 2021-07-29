@@ -1,9 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Nome:</strong>
-  <%= @ti_tecnico.nome %>
-</p>
-
-<%= link_to 'Edit', edit_ti_tecnico_path(@ti_tecnico) %> |
-<%= link_to 'Back', ti_tecnicos_path %>
+<%= render @ti_tecnico  %>
+<%= link_to 'Editar', edit_ti_tecnico_path(@ti_tecnico) %> |
+<%= link_to 'Voltar', ti_tecnicos_path %>
