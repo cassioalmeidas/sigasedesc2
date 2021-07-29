@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_28_182621) do
+ActiveRecord::Schema.define(version: 2021_07_29_142503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ativos", force: :cascade do |t|
+    t.string "nome"
+    t.string "numero_patrimonial"
+    t.bigint "unidade_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["unidade_id"], name: "index_ativos_on_unidade_id"
+  end
 
   create_table "servicos", force: :cascade do |t|
     t.string "nome", null: false
@@ -23,6 +32,12 @@ ActiveRecord::Schema.define(version: 2021_07_28_182621) do
   end
 
   create_table "tecnicos", force: :cascade do |t|
+    t.string "nome", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "unidades", force: :cascade do |t|
     t.string "nome", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -40,4 +55,5 @@ ActiveRecord::Schema.define(version: 2021_07_28_182621) do
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ativos", "unidades"
 end

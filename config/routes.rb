@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ativos
+  resources :unidades
   root to: 'principal#index'
   devise_for :usuarios
   resources :servicos

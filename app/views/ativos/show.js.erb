@@ -2,9 +2,9 @@
   modalContent.html(
   `
     <%= j render 'shared/modal', 
-          title: 'Detalhes do técnico', 
-          body: render(@tecnico),
-          footer: @tecnico.decorate.modal_links
+          title: 'Detalhes do ativo', 
+          body: render(@ativo),
+          footer: @ativo.decorate.modal_links
     %>
   `
   );
@@ -15,4 +15,3 @@
   })
 
   modal.show()
-

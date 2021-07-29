@@ -23,17 +23,17 @@ class TecnicosController < ApplicationController
   def create
     @tecnico = Tecnico.new(tecnico_params)
     @tecnico.save
-    respond_with(@tecnico)
+    respond_with(@tecnico, location: -> { tecnicos_url })
   end
 
   def update
     @tecnico.update(tecnico_params)
-    respond_with(@tecnico)
+    respond_with(@tecnico, location: -> { tecnicos_url })
   end
 
   def destroy
     @tecnico.destroy
-    respond_with(@tecnico)
+    respond_with(@tecnico, location: -> { tecnicos_url })
   end
 
   private

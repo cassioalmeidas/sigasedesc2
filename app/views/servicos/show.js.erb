@@ -2,7 +2,7 @@ var modalContent = $('#modal-window').html(
 `
   <%= j render 'shared/modal', 
         title: 'Detalhes do serviço', 
-        body: @servico.detalhes,
+        body: render(@servico),
         footer: @servico.decorate.modal_links
   %>
 `

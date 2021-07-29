@@ -7,6 +7,14 @@ pt-BR:
       tecnico:
         one: Técnico
         other: Técnicos
+      unidade:
+        one: Unidade
+        other: Unidades
+      ativo:
+        one: Ativo
+        other: Ativos
     attributes: 
       servico:
         descricao: Descrição
+      ativo:
+        numero_patrimonial: Número patrimonial
