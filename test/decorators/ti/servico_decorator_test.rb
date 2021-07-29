@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class Ti::ServicoDecoratorTest < Draper::TestCase
+class ServicoDecoratorTest < Draper::TestCase
 end

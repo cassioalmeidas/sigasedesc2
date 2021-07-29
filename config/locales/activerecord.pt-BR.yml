@@ -1,10 +1,10 @@
 pt-BR:
   activerecord:
     models:
-      ti/servico:
+      servico:
         one: Serviço
         other: Serviços
-      ti/tecnico:
+      tecnico:
         one: Técnico
         other: Técnicos
     attributes: 

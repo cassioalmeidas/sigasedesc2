@@ -1,2 +1,0 @@
-module Ti::TecnicosHelper
-end

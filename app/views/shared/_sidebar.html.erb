@@ -18,8 +18,8 @@
         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
           <nav class="sb-sidenav-menu-nested nav">
             <a class="nav-link" href="layout-static.html">Ordens de Serviço</a>
-            <%= link_to Ti::Servico.model_name.human(count: 2), ti_servicos_url, class: 'nav-link' %>
-            <%= link_to Ti::Tecnico.model_name.human(count: 2), ti_tecnicos_url, class: 'nav-link' %>
+            <%= link_to Servico.model_name.human(count: 2), servicos_url, class: 'nav-link' %>
+            <%= link_to Tecnico.model_name.human(count: 2), tecnicos_url, class: 'nav-link' %>
           </nav>
         </div>
         <%# <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
