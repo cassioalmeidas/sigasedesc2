@@ -32,6 +32,9 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'devise-i18n'
 gem 'responders'
 gem 'draper'
+gem 'aasm'
+gem 'after_commit_everywhere', '~> 1.0'
+
 
 
 

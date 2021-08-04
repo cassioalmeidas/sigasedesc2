@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :especificacao_ativos
+  resources :manutencoes
   resources :ativos
   resources :unidades
   root to: 'principal#index'

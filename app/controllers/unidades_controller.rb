@@ -24,17 +24,17 @@ class UnidadesController < ApplicationController
   def create
     @unidade = Unidade.new(unidade_params)
     @unidade.save
-    respond_with(@unidade)
+    respond_with(@unidade, location: -> { unidades_url })
   end
 
   def update
     @unidade.update(unidade_params)
-    respond_with(@unidade)
+    respond_with(@unidade, location: -> { unidades_url })
   end
 
   def destroy
     @unidade.destroy
-    respond_with(@unidade)
+    respond_with(@unidade, location: -> { unidades_url })
   end
 
   private

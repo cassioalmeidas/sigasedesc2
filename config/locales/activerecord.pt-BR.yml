@@ -13,8 +13,31 @@ pt-BR:
       ativo:
         one: Ativo
         other: Ativos
+      manutencao:
+        one: Manutenção
+        other: Manutenções
     attributes: 
       servico:
         descricao: Descrição
       ativo:
+        especificacao_ativo: Especificação do ativo
         numero_patrimonial: Número patrimonial
+
+      manutencao:
+        tecnico_recebeu: Técnico que recebeu
+        tecnicos_realizaram: Técnicos que realizaram
+        diagnosticos: Diagnósticos
+        data_entrada: Data de entrada
+        data_conclusao: Data de conclusão
+        data_entrega: Data de entrega
+        responsavel_recebimento: Responsável pelo recebimento
+        situacao:
+          one: Situação
+          recebido: Recebido
+          em_andamento: Em andamento
+          concluido: Concluído
+          aguardando_peca: Aguardando peça
+          enviado_suporte_loja: Enviado para suporte da loja
+          enviado_garantia: Enviado para garantia
+          nao_realizado: Serviço não realizado
+          entregue: Entregue

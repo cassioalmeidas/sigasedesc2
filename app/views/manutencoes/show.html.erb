@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Situacao:</strong>
+  <%= @manutencao.situacao %>
+</p>
+
+<p>
+  <strong>Ativo:</strong>
+  <%= @manutencao.ativo_id %>
+</p>
+
+<p>
+  <strong>Tecnico recebeu:</strong>
+  <%= @manutencao.tecnico_recebeu_id %>
+</p>
+
+<p>
+  <strong>Data conclusao:</strong>
+  <%= @manutencao.data_conclusao %>
+</p>
+
+<p>
+  <strong>Data entrega:</strong>
+  <%= @manutencao.data_entrega %>
+</p>
+
+<p>
+  <strong>Responsavel recebimento:</strong>
+  <%= @manutencao.responsavel_recebimento %>
+</p>
+
+<%= link_to 'Edit', edit_manutencao_path(@manutencao) %> |
+<%= link_to 'Back', manutencoes_path %>

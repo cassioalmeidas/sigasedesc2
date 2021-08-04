@@ -1,0 +1,60 @@
+
+<%= simple_form_for(@manutencao)do |f| %>
+  <%= f.error_notification %>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <%= f.input :situacao, collection: Manutencao.aasm.states_for_select %>
+      </div>
+      <div class="col-12 col-md-4">
+        <%= f.association :tecnico_recebeu %>
+      </div>
+      <div class="col-12 col-md-4">
+        <%= f.input :data_entrada, as: :string, input_html: { class: 'datepicker' } %>
+      </div>
+    </div>
+
+    <div class="row">
+      <%= f.simple_fields_for :ativo do |a| %>
+        <div class="col-12 col-md-3">
+          <%= a.input :numero_patrimonial %>
+        </div>
+        <div class="col-12 col-md-6">
+          <%= a.association :especificacao_ativo %>                      
+        </div>
+        <div class="col-12 col-md-3">
+          <%= a.association :unidade %>                      
+        </div>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <%= f.input :problemas_apresentados %>
+      </div>
+      <div class="col-12 col-md-4">
+        <%= f.input :diagnosticos %>
+      </div>
+      <div class="col-12 col-md-4">
+        <%= f.input :procedimentos_realizados %>
+      </div>            
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4">
+        <%= f.association :tecnicos_realizaram, 
+                          collection: Tecnico.all,
+                          include_blank: true,
+                          input_html: { class: 'select2', multiple: true } %>
+      </div>
+      <div class="col-12 col-md-3 col-lg-2">
+        <%= f.input :data_conclusao, as: :string, input_html: { class: 'datepicker' } %>  
+      </div>
+      <div class="col-12 col-md-3 col-lg-2">
+        <%= f.input :data_entrega, as: :string, input_html: { class: 'datepicker' } %>      
+      </div>
+      <div class="col-12 col-md-12 col-lg-4">
+        <%= f.input :responsavel_recebimento %>
+      </div>
+    </div>
+    <%= f.button :submit, class: "btn btn-primary" %>
+
+<% end %>

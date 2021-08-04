@@ -17,7 +17,7 @@
     <tbody>
       <% @ativos.each do |ativo| %>
         <tr>
-          <td><%= link_to ativo.nome, ativo, remote: true %></td>
+          <td><%= link_to ativo.especificacao_ativo, ativo, remote: true %></td>
           <td><%= ativo.numero_patrimonial.present? ? ativo.numero_patrimonial : "Sem número" %></td>
           <td><%= ativo.unidade.present? ? ativo.unidade : "Sem unidade" %></td>
           <td>

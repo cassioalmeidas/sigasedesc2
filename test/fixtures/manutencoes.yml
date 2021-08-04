@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  situacao: MyString
+  ativo: one
+  tecnico_recebeu: one
+  data_conclusao: 2021-07-29 17:09:59
+  data_entrega: 2021-07-29 17:09:59
+  responsavel_recebimento: MyString
+
+two:
+  situacao: MyString
+  ativo: two
+  tecnico_recebeu: two
+  data_conclusao: 2021-07-29 17:09:59
+  data_entrega: 2021-07-29 17:09:59
+  responsavel_recebimento: MyString

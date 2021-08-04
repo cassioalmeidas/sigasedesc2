@@ -1,9 +1,9 @@
 <%= simple_form_for(@ativo) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <%= f.input :nome, wrapper_html: { class: 'mb-4' } %>
-  <%= f.input :numero_patrimonial, wrapper_html: { class: 'mb-4' }  %>
-  <%= f.association :unidade, wrapper_html: { class: 'mb-4' }  %>
+  <%= f.association :especificacao_ativo %>
+  <%= f.input :numero_patrimonial  %>
+  <%= f.association :unidade  %>
   <%= f.button :submit, class: 'btn btn-primary' %>
   <%= link_to 'Cancelar e voltar', ativos_path, class: 'btn btn-secondary' %>
 <% end %>

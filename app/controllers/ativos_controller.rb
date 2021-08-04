@@ -15,6 +15,7 @@ class AtivosController < ApplicationController
 
   def new
     @ativo = Ativo.new
+    @ativo.build_especificacao_ativo
     respond_with(@ativo)
   end
 
@@ -43,6 +44,6 @@ class AtivosController < ApplicationController
     end
 
     def ativo_params
-      params.require(:ativo).permit(:nome, :numero_patrimonial, :unidade_id)
+      params.require(:ativo).permit(:nome, :numero_patrimonial, :unidade_id, :especificacao_ativo_id)
     end
 end

@@ -1,9 +1,12 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flatpickr/dist/themes/material_blue";
 @import "sb-admin";
+@import "select2/src/scss/core";
+@import "select2-bootstrap-5-theme/src/include-all";
 
 
 a {
-width: auto;
+  width: auto;
 }
