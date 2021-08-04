@@ -24,12 +24,12 @@ class ManutencoesController < ApplicationController
   def create
     @manutencao = Manutencao.new(manutencao_params)
     @manutencao.save
-    respond_with(@manutencao)
+    respond_with(@manutencao, location: -> { manutencoes_url })
   end
 
   def update
     @manutencao.update(manutencao_params)
-    respond_with(@manutencao)
+    respond_with(@manutencao, location: -> { manutencoes_url })
   end
 
   def destroy

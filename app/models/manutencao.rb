@@ -1,6 +1,6 @@
 class Manutencao < ApplicationRecord
   include AASM
-
+  validates :data_entrada, presence: true
   belongs_to :ativo
   belongs_to :tecnico_recebeu, class_name: "Tecnico"
   has_many :manutencao_tecnico, dependent: :destroy

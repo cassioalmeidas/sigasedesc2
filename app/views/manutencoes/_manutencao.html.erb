@@ -1,17 +1,36 @@
-<h1>OS #<%= @manutencao.id %></h1>
-<p>Situacao: <%= @manutencao.aasm.human_state %></p>
-<p>Data de entrada: <%= l @manutencao.data_entrada %></p>
-<p>Ativo: <%= @manutencao.ativo %> | Nº Patrimonial: <%= @manutencao.ativo.numero_patrimonial %> | Unidade: <%= @manutencao.ativo.unidade %> </p>
-<p>Tecnico que recebeu: <%= @manutencao.tecnico_recebeu %></p>
-<p>Problemas apresentados: <%= @manutencao.problemas_apresentados %></p>
-<p>Diagnósticos: <%= @manutencao.problemas_apresentados %></p>
-<p>Procedimentos realizados: <%= @manutencao.procedimentos_realizados %></p>
-<p>Técnicos que realizaram: </p>
-<ul>
-<% @manutencao.tecnicos_realizaram.each do |tecnico| %>
-  <li><%= tecnico %></li>
-<% end %>
-</ul>
-<p>Data de conclusão: <%= l @manutencao.data_conclusao %></p>
-<p>Data de entrega: <%= l @manutencao.data_entrega %></p>
-<p>Responsavel pelo recebimento: <%= @manutencao.responsavel_recebimento %></p>
+<div class="row border-bottom mb-4">
+  <h1>OS #<%= @manutencao.id %></h1>
+</div>
+<div class="row">
+  <div class="col-12 col-md-6">
+    <h2 class="mb-4">Detalhes da manutenção</h2>
+    <p>Situacao: <%= @manutencao.aasm.human_state %></p>
+    <p>Data de entrada: <%= l @manutencao.data_entrada %></p>
+    <p>Tecnico que recebeu: <%= @manutencao.tecnico_recebeu.present? ? @manutencao.tecnico_recebeu : "--" %></p>
+    <p>Problemas apresentados: <%= @manutencao.problemas_apresentados.present? ? @manutencao.problemas_apresentados : "--" %></p>
+    <p>Diagnósticos: <%= @manutencao.problemas_apresentados.present? ? @manutencao.problemas_apresentados : "--" %></p>
+    <p>Procedimentos realizados: <%= @manutencao.procedimentos_realizados.present? ? @manutencao.procedimentos_realizados : "--" %></p>
+    <p>
+      Técnicos que realizaram:
+      <% if @manutencao.tecnicos_realizaram.present? %>
+        <ul>
+          <% @manutencao.tecnicos_realizaram.each do |tecnico| %>
+            <li><%= tecnico %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        --
+      <% end %>
+    </p>
+
+    <p>Data de conclusão: <%= @manutencao.data_conclusao.present? ? l(@manutencao.data_conclusao) : "--" %></p>    
+    <p>Data de entrega: <%= @manutencao.data_entrega.present? ? l(@manutencao.data_entrega) : "--" %></p>
+    <p>Responsavel pelo recebimento: <%= @manutencao.responsavel_recebimento.present? ? @manutencao.responsavel_recebimento : "--" %></p>
+  </div>
+  <div class="col-12 col-md-6">
+    <h2 class="mb-4">Detalhes do ativo</h2>  
+    <p>Ativo: <%= @manutencao.ativo %></p>
+    <p>Nº Patrimonial: <%= @manutencao.ativo.numero_patrimonial.present? ? @manutencao.ativo.numero_patrimonial : "--" %></p>
+    <p>Unidade: <%= @manutencao.ativo.unidade.present? ? @manutencao.ativo.unidade : "--" %> </p>
+  </div>  
+</div>

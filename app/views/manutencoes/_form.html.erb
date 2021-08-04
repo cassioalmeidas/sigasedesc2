@@ -9,7 +9,7 @@
         <%= f.association :tecnico_recebeu %>
       </div>
       <div class="col-12 col-md-4">
-        <%= f.input :data_entrada, as: :string, input_html: { class: 'datepicker' } %>
+        <%= f.input :data_entrada, as: :flatpickr %>
       </div>
     </div>
 
@@ -46,15 +46,15 @@
                           input_html: { class: 'select2', multiple: true } %>
       </div>
       <div class="col-12 col-md-3 col-lg-2">
-        <%= f.input :data_conclusao, as: :string, input_html: { class: 'datepicker' } %>  
+        <%= f.input :data_conclusao, as: :flatpickr %>  
       </div>
       <div class="col-12 col-md-3 col-lg-2">
-        <%= f.input :data_entrega, as: :string, input_html: { class: 'datepicker' } %>      
+        <%= f.input :data_entrega, as: :flatpickr %>      
       </div>
       <div class="col-12 col-md-12 col-lg-4">
         <%= f.input :responsavel_recebimento %>
       </div>
     </div>
-    <%= f.button :submit, class: "btn btn-primary" %>
-
+    <%= f.button :submit, class: "btn btn-primary" %> 
+    <%= link_to 'Cancelar e voltar', manutencoes_path, class: 'btn btn-secondary' %>
 <% end %>

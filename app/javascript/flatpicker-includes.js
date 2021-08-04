@@ -3,7 +3,8 @@ import { Portuguese } from "flatpickr/dist/l10n/pt";
 
 $(document).on('turbolinks:load', function(){
   var flatpickerConfigs = {
-    "locale": Portuguese
+    "locale": Portuguese,
+    "dateFormat": "d/m/Y"
   };
 
   $('.datepicker').flatpickr(flatpickerConfigs);
