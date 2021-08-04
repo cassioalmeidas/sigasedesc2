@@ -1,0 +1,17 @@
+<h1>OS #<%= @manutencao.id %></h1>
+<p>Situacao: <%= @manutencao.aasm.human_state %></p>
+<p>Data de entrada: <%= l @manutencao.data_entrada %></p>
+<p>Ativo: <%= @manutencao.ativo %> | Nº Patrimonial: <%= @manutencao.ativo.numero_patrimonial %> | Unidade: <%= @manutencao.ativo.unidade %> </p>
+<p>Tecnico que recebeu: <%= @manutencao.tecnico_recebeu %></p>
+<p>Problemas apresentados: <%= @manutencao.problemas_apresentados %></p>
+<p>Diagnósticos: <%= @manutencao.problemas_apresentados %></p>
+<p>Procedimentos realizados: <%= @manutencao.procedimentos_realizados %></p>
+<p>Técnicos que realizaram: </p>
+<ul>
+<% @manutencao.tecnicos_realizaram.each do |tecnico| %>
+  <li><%= tecnico %></li>
+<% end %>
+</ul>
+<p>Data de conclusão: <%= l @manutencao.data_conclusao %></p>
+<p>Data de entrega: <%= l @manutencao.data_entrega %></p>
+<p>Responsavel pelo recebimento: <%= @manutencao.responsavel_recebimento %></p>
