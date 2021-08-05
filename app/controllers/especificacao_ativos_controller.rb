@@ -23,17 +23,17 @@ class EspecificacaoAtivosController < ApplicationController
   def create
     @especificacao_ativo = EspecificacaoAtivo.new(especificacao_ativo_params)
     @especificacao_ativo.save
-    respond_with(@especificacao_ativo)
+    respond_with(@especificacao_ativo, location: -> { especificacao_ativos_url })
   end
 
   def update
     @especificacao_ativo.update(especificacao_ativo_params)
-    respond_with(@especificacao_ativo)
+    respond_with(@especificacao_ativo, location: -> { especificacao_ativos_url })
   end
 
   def destroy
     @especificacao_ativo.destroy
-    respond_with(@especificacao_ativo)
+    respond_with(@especificacao_ativo, location: -> { especificacao_ativos_url })
   end
 
   private

@@ -1,9 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @especificacao_ativo.nome %></h1>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @especificacao_ativo.nome %>
-</p>
-
-<%= link_to 'Edit', edit_especificacao_ativo_path(@especificacao_ativo) %> |
-<%= link_to 'Back', especificacao_ativos_path %>
+<%= link_to 'Editar', edit_especificacao_ativo_path(@especificacao_ativo) %> |
+<%= link_to 'Voltar', especificacao_ativos_path %>

@@ -1,11 +1,13 @@
 class Manutencao < ApplicationRecord
   include AASM
-  validates :data_entrada, presence: true
+
   belongs_to :ativo
   belongs_to :tecnico_recebeu, class_name: "Tecnico"
   has_many :manutencao_tecnico, dependent: :destroy
   has_many :tecnicos_realizaram, through: :manutencao_tecnico, source: :tecnico
   accepts_nested_attributes_for :ativo
+
+  validates :data_entrada, :ativo, presence: true
 
   aasm column: :situacao do
     state :em_andamento, initial: true

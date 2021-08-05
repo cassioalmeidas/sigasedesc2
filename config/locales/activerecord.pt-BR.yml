@@ -16,6 +16,9 @@ pt-BR:
       manutencao:
         one: Manutenção
         other: Manutenções
+      especificacao_ativo:
+        one: Especificações do ativo
+        other: Especificações dos ativos
     attributes: 
       servico:
         descricao: Descrição

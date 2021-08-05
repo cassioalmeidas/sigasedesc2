@@ -27,6 +27,7 @@
     <p>Data de entrega: <%= @manutencao.data_entrega.present? ? l(@manutencao.data_entrega) : "--" %></p>
     <p>Responsavel pelo recebimento: <%= @manutencao.responsavel_recebimento.present? ? @manutencao.responsavel_recebimento : "--" %></p>
   </div>
+  
   <div class="col-12 col-md-6">
     <h2 class="mb-4">Detalhes do ativo</h2>  
     <p>Ativo: <%= @manutencao.ativo %></p>
