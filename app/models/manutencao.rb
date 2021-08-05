@@ -3,7 +3,7 @@ class Manutencao < ApplicationRecord
 
   belongs_to :ativo
   belongs_to :tecnico_recebeu, class_name: "Tecnico"
-  has_many :manutencao_tecnico, dependent: :destroy
+  has_many :manutencao_tecnico
   has_many :tecnicos_realizaram, through: :manutencao_tecnico, source: :tecnico
   accepts_nested_attributes_for :ativo
 
