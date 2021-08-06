@@ -22,7 +22,7 @@
           <td><%= ativo.unidade.present? ? ativo.unidade : "Sem unidade" %></td>
           <td>
             <%= icon 'fas', 'edit'  %>
-            <%= link_to 'editar', edit_ativo_path(ativo) %>
+            <%= link_to 'editar', edit_ativo_path(ativo) %> |
             <%= icon 'fas', 'trash'  %>
             <%= link_to 'remover', ativo, method: :delete, data: { confirm_swal: 'Você tem certeza?' }, class: "text-danger" %>
           </td>

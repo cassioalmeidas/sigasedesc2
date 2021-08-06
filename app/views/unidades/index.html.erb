@@ -18,7 +18,7 @@
           <td><%= link_to unidade.nome, unidade, remote: true %></td>
           <td>
             <%= icon 'fas', 'edit'  %>
-            <%= link_to 'editar', edit_unidade_path(unidade) %>
+            <%= link_to 'editar', edit_unidade_path(unidade) %> |
             <%= icon 'fas', 'trash'  %> 
             <%= link_to 'remover', unidade, method: :delete, data: { confirm_swal: 'Você tem certeza?' }, class: "text-danger" %>
           </td>

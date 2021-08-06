@@ -12,7 +12,7 @@
       <th>Código</th>
       <th>Situação</th>
       <th>Ativo</th>
-      <th colspan="3"></th>
+      <th colspan="3">Ações</th>
     </tr>
   </thead>
 
@@ -23,8 +23,10 @@
         <td><%= manutencao.aasm.human_state %></td>
         <td><%= manutencao.ativo %></td>
         <td>
-          <%= link_to 'editar', edit_manutencao_path(manutencao) %>
-          <%= link_to 'remover', manutencao, method: :delete, data: { confirm_swal: 'Você tem certeza?' } %>
+          <%= icon 'fas', 'edit'  %>
+          <%= link_to 'editar', edit_manutencao_path(manutencao) %> |
+          <%= icon 'fas', 'trash'  %>
+          <%= link_to 'remover', manutencao, method: :delete, data: { confirm_swal: 'Você tem certeza?' }, class: 'text-danger' %>
         </td>
       </tr>
     <% end %>

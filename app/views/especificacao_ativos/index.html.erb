@@ -19,7 +19,9 @@
         <tr>
           <td><%= link_to especificacao_ativo.nome, especificacao_ativo  %></td>
           <td>
+            <%= icon 'fas', 'edit'  %>
             <%= link_to 'editar', edit_especificacao_ativo_path(especificacao_ativo) %> |
+            <%= icon 'fas', 'trash'  %>
             <%= link_to 'remover', especificacao_ativo, method: :delete, data: { confirm_swal: 'Você tem certeza?' } %>
           </td>
         </tr>
