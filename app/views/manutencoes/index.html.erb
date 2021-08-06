@@ -17,19 +17,26 @@
   </thead>
 
   <tbody>
-    <% @manutencoes.each do |manutencao| %>
+    <% if @manutencoes.any? %>
+      <% @manutencoes.each do |manutencao| %>
+        <tr>
+          <td><%= link_to "OS ##{manutencao.id}", manutencao %></td>
+          <td><%= manutencao.aasm.human_state %></td>
+          <td><%= manutencao.ativo %></td>
+          <td>
+            <%= icon 'fas', 'edit'  %>
+            <%= link_to 'editar', edit_manutencao_path(manutencao) %> |
+            <%= icon 'fas', 'trash'  %>
+            <%= link_to 'remover', manutencao, method: :delete, data: { confirm_swal: 'Você tem certeza?' }, class: 'text-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
       <tr>
-        <td><%= link_to "OS ##{manutencao.id}", manutencao %></td>
-        <td><%= manutencao.aasm.human_state %></td>
-        <td><%= manutencao.ativo %></td>
-        <td>
-          <%= icon 'fas', 'edit'  %>
-          <%= link_to 'editar', edit_manutencao_path(manutencao) %> |
-          <%= icon 'fas', 'trash'  %>
-          <%= link_to 'remover', manutencao, method: :delete, data: { confirm_swal: 'Você tem certeza?' }, class: 'text-danger' %>
-        </td>
+        <td colspan="4" class="text-center">Sem registros.</td>
       </tr>
     <% end %>
+    
   </tbody>
 </table>
 </div>

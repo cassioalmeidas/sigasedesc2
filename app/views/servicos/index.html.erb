@@ -10,20 +10,26 @@
     <thead>
       <tr>
         <th>Nome</th>
-        <th colspan="3">Ações</th>
+        <th>Ações</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @servicos.each do |servico| %>
+      <% if @servicos.any? %>
+        <% @servicos.each do |servico| %>
+          <tr>
+            <td><%= link_to servico.nome, servico, remote: true  %></td>
+            <td>
+              <%= icon 'fas', 'edit'  %>
+              <%= link_to 'editar', edit_servico_path(servico) %> |
+              <%= icon 'fas', 'trash'  %> 
+              <%= link_to 'remover', servico, method: :delete, data: { confirm_swal: 'Você tem certeza?' }, class: 'text-danger' %>
+            </td>
+          </tr>
+        <% end %>
+      <% else %>
         <tr>
-          <td><%= link_to servico.nome, servico, remote: true  %></td>
-          <td>
-            <%= icon 'fas', 'edit'  %>
-            <%= link_to 'editar', edit_servico_path(servico) %> |
-            <%= icon 'fas', 'trash'  %> 
-            <%= link_to 'remover', servico, method: :delete, data: { confirm_swal: 'Você tem certeza?' }, class: 'text-danger' %>
-          </td>
+          <td colspan="2" class="text-center">Sem registros.</td>
         </tr>
       <% end %>
     </tbody>
