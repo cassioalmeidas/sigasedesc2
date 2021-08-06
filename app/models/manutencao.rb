@@ -3,7 +3,7 @@ class Manutencao < ApplicationRecord
 
   belongs_to :ativo
   belongs_to :tecnico_recebeu, class_name: "Tecnico"
-  has_many :manutencao_tecnico
+  has_many :manutencao_tecnico, dependent: :destroy
   has_many :tecnicos_realizaram, through: :manutencao_tecnico, source: :tecnico
   accepts_nested_attributes_for :ativo
 
@@ -23,7 +23,7 @@ class Manutencao < ApplicationRecord
     self.ativo = Ativo.find_or_create_by(
       numero_patrimonial: hash['numero_patrimonial'],
       especificacao_ativo_id: hash['especificacao_ativo_id'],
-      unidade_id: hash['unidade_id']
+      unidade_id: hash['unidade_id'].blank? ? nil : hash['unidade_id']
     )
   end
 
