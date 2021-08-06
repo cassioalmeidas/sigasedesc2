@@ -139,6 +139,9 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pagy (4.10.1)
+    paper_trail (12.0.0)
+      activerecord (>= 5.2)
+      request_store (~> 1.1)
     paranoia (2.4.3)
       activerecord (>= 4.0, < 6.2)
     pg (1.2.3)
@@ -266,6 +269,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pagy
+  paper_trail
   paranoia
   pg (~> 1.1)
   puma (~> 5.0)

@@ -1,5 +1,6 @@
 class Tecnico < ApplicationRecord
   acts_as_paranoid
+  has_paper_trail
   validates :nome, presence: true, uniqueness: true
   has_many :manutencao_tecnicos, dependent: :restrict_with_error
   has_many :manutencoes_recebidas, class_name: 'Manutencao'

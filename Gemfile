@@ -36,6 +36,7 @@ gem 'aasm'
 gem 'after_commit_everywhere', '~> 1.0'
 gem 'pagy'
 gem 'paranoia'
+gem 'paper_trail'
 
 
 # Reduces boot times through caching; required in config/boot.rb

@@ -1,5 +1,6 @@
 class Servico < ApplicationRecord
   acts_as_paranoid
+  has_paper_trail
   validates :nome, presence: true
 
   def detalhes

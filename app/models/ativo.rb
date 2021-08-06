@@ -1,5 +1,6 @@
 class Ativo < ApplicationRecord
   acts_as_paranoid
+  has_paper_trail
   has_many :manutencoes, dependent: :restrict_with_error
   belongs_to :unidade, optional: true
   belongs_to :especificacao_ativo

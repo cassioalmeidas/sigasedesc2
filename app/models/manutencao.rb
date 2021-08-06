@@ -1,6 +1,7 @@
 class Manutencao < ApplicationRecord
-  acts_as_paranoid
   include AASM
+  has_paper_trail
+  acts_as_paranoid
 
   belongs_to :ativo
   belongs_to :tecnico_recebeu, class_name: "Tecnico"
