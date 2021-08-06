@@ -5,7 +5,7 @@ class AtivosController < ApplicationController
   respond_to :js, only: [:show]
 
   def index
-    @ativos = Ativo.all
+    @pagy, @ativos = pagy(Ativo.all)
     respond_with(@ativos)
   end
 

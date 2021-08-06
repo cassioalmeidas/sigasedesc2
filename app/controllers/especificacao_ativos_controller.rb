@@ -4,7 +4,7 @@ class EspecificacaoAtivosController < ApplicationController
   respond_to :html
 
   def index
-    @especificacao_ativos = EspecificacaoAtivo.all
+    @pagy, @especificacao_ativos = pagy(EspecificacaoAtivo.all)
     respond_with(@especificacao_ativos)
   end
 

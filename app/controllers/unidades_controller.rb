@@ -5,7 +5,7 @@ class UnidadesController < ApplicationController
   respond_to :js, only: [:show]
 
   def index
-    @unidades = Unidade.all
+    @pagy, @unidades = pagy(Unidade.all)
     respond_with(@unidades)
   end
 

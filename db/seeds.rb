@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+Tecnico.destroy_all
+EspecificacaoAtivo.destroy_all
+30.times { Tecnico.create(nome: Faker::Name.name) }
+30.times { EspecificacaoAtivo.create(nome: Faker::ElectricalComponents.electromechanical ) }

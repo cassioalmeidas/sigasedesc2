@@ -4,7 +4,7 @@ class TecnicosController < ApplicationController
   respond_to :html
 
   def index
-    @tecnicos = Tecnico.all
+    @pagy, @tecnicos = pagy(Tecnico.all)
     respond_with(@tecnicos)
   end
 

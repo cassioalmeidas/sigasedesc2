@@ -3,7 +3,7 @@ class ServicosController < ApplicationController
   respond_to :js, only: :show
 
   def index
-    @servicos = Servico.all
+    @pagy, @servicos = pagy(Servico.all)
     respond_with(@servicos)
   end
 

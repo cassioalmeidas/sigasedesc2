@@ -34,8 +34,7 @@ gem 'responders'
 gem 'draper'
 gem 'aasm'
 gem 'after_commit_everywhere', '~> 1.0'
-
-
+gem 'pagy'
 
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -55,6 +54,7 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
 
 group :test do
