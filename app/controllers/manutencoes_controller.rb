@@ -34,7 +34,7 @@ class ManutencoesController < ApplicationController
 
   def destroy
     @manutencao.destroy
-    respond_with(@manutencao)
+    respond_with(@manutencao, location: -> { manutencoes_url })
   end
 
   private
