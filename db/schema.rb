@@ -19,23 +19,29 @@ ActiveRecord::Schema.define(version: 2021_08_03_141535) do
     t.bigint "especificacao_ativo_id", null: false
     t.string "numero_patrimonial"
     t.bigint "unidade_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_ativos_on_deleted_at"
     t.index ["especificacao_ativo_id"], name: "index_ativos_on_especificacao_ativo_id"
     t.index ["unidade_id"], name: "index_ativos_on_unidade_id"
   end
 
   create_table "especificacao_ativos", force: :cascade do |t|
     t.string "nome", null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_especificacao_ativos_on_deleted_at"
   end
 
   create_table "manutencao_tecnicos", force: :cascade do |t|
     t.bigint "manutencao_id", null: false
     t.bigint "tecnico_id", null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_manutencao_tecnicos_on_deleted_at"
     t.index ["manutencao_id"], name: "index_manutencao_tecnicos_on_manutencao_id"
     t.index ["tecnico_id"], name: "index_manutencao_tecnicos_on_tecnico_id"
   end
@@ -51,29 +57,37 @@ ActiveRecord::Schema.define(version: 2021_08_03_141535) do
     t.date "data_conclusao"
     t.date "data_entrega"
     t.string "responsavel_recebimento"
+    t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["ativo_id"], name: "index_manutencoes_on_ativo_id"
+    t.index ["deleted_at"], name: "index_manutencoes_on_deleted_at"
     t.index ["tecnico_recebeu_id"], name: "index_manutencoes_on_tecnico_recebeu_id"
   end
 
   create_table "servicos", force: :cascade do |t|
     t.string "nome", null: false
     t.text "descricao"
+    t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_servicos_on_deleted_at"
   end
 
   create_table "tecnicos", force: :cascade do |t|
     t.string "nome", null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_tecnicos_on_deleted_at"
   end
 
   create_table "unidades", force: :cascade do |t|
     t.string "nome", null: false
+    t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_unidades_on_deleted_at"
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -82,8 +96,10 @@ ActiveRecord::Schema.define(version: 2021_08_03_141535) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_usuarios_on_deleted_at"
     t.index ["email"], name: "index_usuarios_on_email", unique: true
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end

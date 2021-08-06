@@ -1,4 +1,5 @@
 class Servico < ApplicationRecord
+  acts_as_paranoid
   validates :nome, presence: true
 
   def detalhes

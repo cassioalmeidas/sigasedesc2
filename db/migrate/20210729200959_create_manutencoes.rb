@@ -11,6 +11,9 @@ class CreateManutencoes < ActiveRecord::Migration[6.1]
       t.date :data_conclusao
       t.date :data_entrega
       t.string :responsavel_recebimento
+
+      t.datetime :deleted_at, index: true # For Paranoia
+
       t.timestamps
     end
   end

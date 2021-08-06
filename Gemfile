@@ -35,6 +35,7 @@ gem 'draper'
 gem 'aasm'
 gem 'after_commit_everywhere', '~> 1.0'
 gem 'pagy'
+gem 'paranoia'
 
 
 # Reduces boot times through caching; required in config/boot.rb

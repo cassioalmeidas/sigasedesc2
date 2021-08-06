@@ -1,4 +1,5 @@
 class Manutencao < ApplicationRecord
+  acts_as_paranoid
   include AASM
 
   belongs_to :ativo
