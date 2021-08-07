@@ -97,6 +97,8 @@ ActiveRecord::Schema.define(version: 2021_08_06_184214) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "deleted_at"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["deleted_at"], name: "index_usuarios_on_deleted_at"

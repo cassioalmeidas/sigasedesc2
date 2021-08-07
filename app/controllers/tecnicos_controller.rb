@@ -4,7 +4,7 @@ class TecnicosController < ApplicationController
   respond_to :html
 
   def index
-    @pagy, @tecnicos = pagy(Tecnico.all)
+    @pagy, @tecnicos = pagy(Tecnico.order('created_at DESC'))
     respond_with(@tecnicos)
   end
 

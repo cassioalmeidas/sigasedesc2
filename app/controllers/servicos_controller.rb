@@ -3,7 +3,7 @@ class ServicosController < ApplicationController
   respond_to :js, only: :show
 
   def index
-    @pagy, @servicos = pagy(Servico.all)
+    @pagy, @servicos = pagy(Servico.order('created_at DESC'))
     respond_with(@servicos)
   end
 

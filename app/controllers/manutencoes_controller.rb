@@ -4,7 +4,7 @@ class ManutencoesController < ApplicationController
   respond_to :html
 
   def index
-    @pagy, @manutencoes = pagy(Manutencao.all)
+    @pagy, @manutencoes = pagy(Manutencao.order('created_at DESC'))
     respond_with(@manutencoes)
   end
 

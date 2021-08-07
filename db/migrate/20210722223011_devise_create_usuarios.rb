@@ -34,6 +34,10 @@ class DeviseCreateUsuarios < ActiveRecord::Migration[6.1]
 
       t.datetime :deleted_at, index: true # For Paranoia
 
+      # Custom
+      t.string :first_name, null: false
+      t.string :last_name, null: false
+
       t.timestamps null: false
     end
 

@@ -25,6 +25,10 @@ pt-BR:
       ativo:
         especificacao_ativo: Especificação do ativo
         numero_patrimonial: Número patrimonial
+      usuario:
+        first_name: Primeiro nome
+        last_name: Último nome
+        password: Senha
 
       manutencao:
         tecnico_recebeu: Técnico que recebeu

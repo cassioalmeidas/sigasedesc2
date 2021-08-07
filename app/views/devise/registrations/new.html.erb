@@ -8,14 +8,24 @@
       <div class="row mb-3">
         <div class="col-md-6">
           <div class="form-floating mb-3 mb-md-0">
-            <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" />
-            <label for="inputFirstName">Primeiro nome</label>
+            <%= f.text_field :first_name,
+                          autofocus: true,
+                          autocomplete: 'first_name',
+                          class: 'form-control',
+                          placeholder: 'Primeiro nome'
+                          %>
+            <%= f.label :first_name %>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-floating">
-            <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" />
-            <label for="inputLastName">Ultimo nome</label>
+            <%= f.text_field :last_name,
+                          autofocus: true,
+                          autocomplete: 'last_name',
+                          class: 'form-control',
+                          placeholder: 'Primeiro nome'
+                          %>
+            <%= f.label :last_name %>
           </div>
         </div>
       </div>

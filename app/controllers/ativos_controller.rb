@@ -5,7 +5,7 @@ class AtivosController < ApplicationController
   respond_to :js, only: [:show]
 
   def index
-    @pagy, @ativos = pagy(Ativo.all)
+    @pagy, @ativos = pagy(Ativo.order('created_at DESC'))
     respond_with(@ativos)
   end
 
